@@ -4,7 +4,6 @@ import './App.css';
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import returns from './returns';
-import ShowReturn from './ShowReturn';
 function App() {
 	const [ range, setRange ] = useState([ 1926, 2020 ]);
 
@@ -13,6 +12,14 @@ function App() {
 	}
 
 	const returnsRange = returns.slice(range[0] - 1926, range[1] - 1926 + 1);
+	returnsRange.map(function(entry, i) {
+		let cumulative = 0;
+		for (let j = 0; j <= i; j++) {
+			cumulative += Number(returnsRange[j].totalReturn);
+		}
+		entry.cumulative = cumulative;
+	});
+	console.log(returnsRange);
 	return (
 		<div className="App">
 			<Range
@@ -28,6 +35,7 @@ function App() {
 						return (
 							<tr key={i}>
 								<td>{entry.year}</td> <td>{entry.totalReturn}</td>
+								<td>{entry.cumulative}</td>
 							</tr>
 						);
 					})}
