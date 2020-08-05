@@ -19,7 +19,6 @@ function App() {
 				min={1926}
 				max={2020}
 				defaultValue={[ 1926, 2020 ]}
-				reverse={true}
 				allowCross={false}
 				onChange={(e) => changeRange(e)}
 			/>
