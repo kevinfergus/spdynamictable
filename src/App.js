@@ -17,9 +17,8 @@ function App() {
 		for (let j = 0; j <= i; j++) {
 			cumulative += Number(returnsRange[j].totalReturn);
 		}
-		entry.cumulative = cumulative;
+		entry.cumulative = cumulative.toFixed(2);
 	});
-	console.log(returnsRange);
 	return (
 		<div className="App">
 			<Range
@@ -29,11 +28,15 @@ function App() {
 				allowCross={false}
 				onChange={(e) => changeRange(e)}
 			/>
-			<table>
+			S&P 500 Total Returns by Year
+			<table className="table">
 				<div>
+					<tr>
+						<td>Year</td> <td>Total Return</td> <td>Cumulative</td>
+					</tr>
 					{returnsRange.map(function(entry, i) {
 						return (
-							<tr key={i}>
+							<tr key={i} className="table-row">
 								<td>{entry.year}</td> <td>{entry.totalReturn}</td>
 								<td>{entry.cumulative}</td>
 							</tr>
