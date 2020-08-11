@@ -16,10 +16,21 @@
 	}
 }
 
+#chart-title {
+	font-size: 3vw;
+}
+
 .table {
 	display: flex;
 	justify-content: center;
 	border-collapse: collapse;
+	border-spacing: 10rem;
+	border-top: 0px;
+}
+
+#table-start {
+	font-weight: bold;
+	border-top: 0;
 }
 
 .table-row {
@@ -28,6 +39,12 @@
 	border-bottom: 1px solid black;
 	border-top: 1px solid black;
 	border-collapse: collapse;
+}
+.td {
+	padding-right: 1rem;
+}
+.td-end {
+	padding-right: 0rem;
 }
 
 .App-header {

@@ -46,18 +46,19 @@ function App() {
 					onChange={(e) => changeRange(e)}
 				/>
 			</div>
-			<div style={{ fontSize: '3vw' }}>S&P 500 Total Returns by Year</div>
+			<div id="chart-title">S&P 500 Total Returns by Year</div>
 
-			<table className="table" style={{ fontSize: 20 }}>
+			<table className="table" style={{ fontSize: '1.5rem', borderSpacing: '10rem' }}>
 				<div>
-					<tr>
-						<td>Year</td> <td>Total Return</td> <td>Cumulative</td>
+					<tr className="table-row" id="table-start">
+						<td className="td">Year</td> <td className="td">Total Annual Return</td>{' '}
+						<td className="td-end">Cumulative</td>
 					</tr>
 					{returnsRange.map(function(entry, i) {
 						return (
 							<tr key={i} className="table-row">
-								<td>{entry.year}</td> <td>{entry.totalReturn}</td>
-								<td>{entry.cumulative}</td>
+								<td className="td">{entry.year}</td> <td className="td">{entry.totalReturn}</td>
+								<td className="td-end">{entry.cumulative}</td>
 							</tr>
 						);
 					})}
