@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Slider from 'rc-slider';
-
 import 'rc-slider/assets/index.css';
 import returns from './returns';
 
@@ -13,7 +11,6 @@ function App() {
 	const [ range, setRange ] = useState([ 1926, 2019 ]);
 	const [ rangePositon, setRangePosition ] = useState(window.innerWidth / 4);
 	const marks = {
-		'1926': '2019',
 		1926: <strong>1926</strong>,
 		2019: <strong>2019</strong>
 	};
@@ -47,7 +44,7 @@ function App() {
 				allowCross={false}
 				onChange={(e) => changeRange(e)}
 			/>
-			<div style={{ fontSize: 50 }}>S&P 500 Total Returns by Year</div>
+			<div style={{ fontSize: '3vw' }}>S&P 500 Total Returns by Year</div>
 
 			<table className="table" style={{ fontSize: 20 }}>
 				<div>
