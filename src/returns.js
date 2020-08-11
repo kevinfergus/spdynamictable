@@ -95,6 +95,11 @@ const descendingReturns = [
 	{ year: 1926, totalReturn: '11.62' }
 ];
 
-const returns = descendingReturns.reverse();
+const returns = descendingReturns.reverse().map((entry) => {
+	const numberedEntry = {};
+	numberedEntry.year = entry.year;
+	numberedEntry.totalReturn = Number(entry.totalReturn);
+	return numberedEntry;
+});
 
 export default returns;

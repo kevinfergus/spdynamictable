@@ -29,7 +29,7 @@ function App() {
 	returnsRange.map(function(entry, i) {
 		let cumulative = 0;
 		for (let j = 0; j <= i; j++) {
-			cumulative += Number(returnsRange[j].totalReturn);
+			cumulative += returnsRange[j].totalReturn;
 		}
 		entry.cumulative = cumulative.toFixed(2);
 	});
@@ -48,7 +48,7 @@ function App() {
 			</div>
 			<div id="chart-title">S&P 500 Total Returns by Year</div>
 
-			<table className="table" style={{ fontSize: '1.5rem', borderSpacing: '10rem' }}>
+			<table className="table">
 				<div>
 					<tr className="table-row" id="table-start">
 						<td className="td">Year</td> <td className="td">Total Annual Return</td>{' '}
@@ -57,8 +57,30 @@ function App() {
 					{returnsRange.map(function(entry, i) {
 						return (
 							<tr key={i} className="table-row">
-								<td className="td">{entry.year}</td> <td className="td">{entry.totalReturn}</td>
-								<td className="td-end">{entry.cumulative}</td>
+								<td className="td">{entry.year}</td>{' '}
+								<td className="td">
+									{' '}
+									<div>
+										<div>
+											{entry.totalReturn > 0 ? (
+												entry.totalReturn
+											) : (
+												<div id="negative"> {entry.totalReturn} </div>
+											)}
+										</div>
+									</div>
+								</td>
+								<td className="td-end">
+									<div>
+										<div>
+											{entry.cumulative > 0 ? (
+												entry.cumulative
+											) : (
+												<div id="negative"> {entry.cumulative} </div>
+											)}
+										</div>
+									</div>
+								</td>
 							</tr>
 						);
 					})}
