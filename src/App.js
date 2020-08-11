@@ -35,15 +35,17 @@ function App() {
 	});
 	return (
 		<div className="App">
-			<Range
-				style={{ maxWidth: window.innerWidth / 2, left: rangePositon }}
-				min={1926}
-				max={2019}
-				marks={marks}
-				defaultValue={[ 1926, 2020 ]}
-				allowCross={false}
-				onChange={(e) => changeRange(e)}
-			/>
+			<div style={{ padding: '1.5rem' }}>
+				<Range
+					style={{ maxWidth: window.innerWidth / 2, left: rangePositon }}
+					min={1926}
+					max={2019}
+					marks={marks}
+					defaultValue={[ 1926, 2020 ]}
+					allowCross={false}
+					onChange={(e) => changeRange(e)}
+				/>
+			</div>
 			<div style={{ fontSize: '3vw' }}>S&P 500 Total Returns by Year</div>
 
 			<table className="table" style={{ fontSize: 20 }}>
