@@ -10,6 +10,7 @@ const Range = createSliderWithTooltip(Slider.Range);
 function App() {
 	const [ range, setRange ] = useState([ 1926, 2019 ]);
 	const [ rangePositon, setRangePosition ] = useState(window.innerWidth / 4);
+
 	const marks = {
 		1926: <strong>1926</strong>,
 		2019: <strong>2019</strong>
@@ -35,7 +36,7 @@ function App() {
 	});
 	return (
 		<div className="App">
-			<div style={{ padding: '1.5rem' }}>
+			<div id="range">
 				<Range
 					style={{ maxWidth: window.innerWidth / 2, left: rangePositon }}
 					min={1926}
