@@ -16,14 +16,6 @@
 	}
 }
 
-#chart-title {
-	font-size: 3vw;
-}
-
-#range {
-	padding: 1.5rem;
-}
-
 .table {
 	display: flex;
 	justify-content: center;
@@ -68,6 +60,14 @@
 
 .App-link {
 	color: #61dafb;
+}
+
+#chart-title {
+	font-size: 3vw;
+}
+
+#range {
+	padding: 1.5rem;
 }
 
 @keyframes App-logo-spin {
